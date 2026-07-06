@@ -123,6 +123,15 @@
   .price-box .amt span{color:var(--red)}
   .price-box .per{color:var(--muted);letter-spacing:1px;text-transform:uppercase;font-size:13px;font-weight:700;margin-bottom:18px}
   .price-box .meta{font-size:15px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;margin-top:8px}
+  .pkg{display:flex;flex-direction:column;position:relative}
+  .pkg .pkg-name{font-family:'Teko';font-size:34px;line-height:1;letter-spacing:1px;color:#fff}
+  .pkg .pkg-price{font-family:'Teko';font-size:58px;line-height:.95;color:#fff;margin:6px 0 2px}
+  .pkg .pkg-price span{color:var(--red)}
+  .pkg .pkg-cap{color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-size:12.5px;font-weight:700;margin-bottom:18px}
+  .pkg .kit-list{margin-bottom:22px;flex:1}
+  .pkg .kit-list li{font-size:15.5px}
+  .pkg-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;font-size:11.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:999px;white-space:nowrap}
+  .pkg.hot{border-color:var(--red)}
 
   /* GALLERY */
   .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
@@ -346,6 +355,7 @@
       <a href="#events">Events</a>
       <a href="#about">About</a>
       <a href="#included">What's Included</a>
+      <a href="#packages">Packages</a>
       <a href="#gallery">Gallery</a>
       <a href="#corporate">Corporate</a>
       <a href="#faq">FAQ</a>
@@ -461,7 +471,7 @@
       <div>
         <div class="eyebrow">Everything provided</div>
         <h2 class="sec-title">Just show up.<br>We've got the <span class="red">gear</span>.</h2>
-        <p class="sec-sub" style="margin-bottom:26px">For casual open sessions, one price covers your full loadout. No hidden extras — bring your crew (minimum 4) and we handle the rest. <em>Booking a corporate or team-building day? See our <a href="#corporate" style="color:var(--red)">tailored packages</a>.</em></p>
+        <p class="sec-sub" style="margin-bottom:26px">For casual open sessions, one price covers your full loadout. No hidden extras — bring your crew (minimum 4) and we handle the rest. <em>Coming as a bigger crew or celebrating a birthday? See our <a href="#packages" style="color:var(--red)">group and birthday packages</a>. Booking a corporate or team-building day? See our <a href="#corporate" style="color:var(--red)">tailored packages</a>.</em></p>
         <ul class="kit-list">
           <li><span class="ck">✓</span><span><strong>200 paintballs</strong> per player to fire downrange</span></li>
           <li><span class="ck">✓</span><span><strong>Paintball marker (gun)</strong> — fully serviced and field-ready</span></li>
@@ -476,6 +486,94 @@
         <a class="btn btn-primary" href="#book" style="width:100%;justify-content:center">Book Now</a>
         <div class="meta">Minimum 4 players · A deposit secures your slot · Same-day sessions are full payment in advance</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:46px">
+      <div class="eyebrow">One price for the whole crew</div>
+      <h2 class="sec-title">Group &amp; Birthday <span class="red">Packages</span></h2>
+      <p class="sec-sub center">One total price, split it however you like. Every package includes full kit for every player plus marshal led games. Pick your size and book on WhatsApp.</p>
+    </div>
+
+    <div class="grid g-3" style="margin-bottom:26px">
+      <div class="card pkg">
+        <div class="pkg-name">Squad Package</div>
+        <div class="pkg-price"><span>P</span>1,000</div>
+        <div class="pkg-cap">Up to 4 players</div>
+        <ul class="kit-list">
+          <li><span class="ck">✓</span><span><strong>800 paintballs</strong> total for the group</span></li>
+          <li><span class="ck">✓</span><span>Full kit for every player: marker, mask, overalls, chest protector</span></li>
+          <li><span class="ck">✓</span><span>Marshal led game modes</span></li>
+        </ul>
+        <a class="btn btn-wa" href="https://wa.me/26773820883?text=Hi%20Trigger%20Ready%2C%20I%20would%20like%20to%20book%20the%20SQUAD%20PACKAGE%20%28P1%2C000%2C%20up%20to%204%20players%29.%0A%0AName%3A%0APreferred%20date%3A%0AVenue%3A" target="_blank" rel="noopener" style="justify-content:center">Book Squad</a>
+      </div>
+
+      <div class="card pkg">
+        <div class="pkg-name">Platoon Package</div>
+        <div class="pkg-price"><span>P</span>1,700</div>
+        <div class="pkg-cap">Up to 7 players</div>
+        <ul class="kit-list">
+          <li><span class="ck">✓</span><span><strong>1,500 paintballs</strong> total for the group</span></li>
+          <li><span class="ck">✓</span><span>Full kit for every player: marker, mask, overalls, chest protector</span></li>
+          <li><span class="ck">✓</span><span>Marshal led game modes</span></li>
+        </ul>
+        <a class="btn btn-wa" href="https://wa.me/26773820883?text=Hi%20Trigger%20Ready%2C%20I%20would%20like%20to%20book%20the%20PLATOON%20PACKAGE%20%28P1%2C700%2C%20up%20to%207%20players%29.%0A%0AName%3A%0APreferred%20date%3A%0AVenue%3A" target="_blank" rel="noopener" style="justify-content:center">Book Platoon</a>
+      </div>
+
+      <div class="card pkg hot">
+        <div class="pkg-badge">Best Value</div>
+        <div class="pkg-name">The Big One</div>
+        <div class="pkg-price"><span>P</span>2,400</div>
+        <div class="pkg-cap">Up to 10 players</div>
+        <ul class="kit-list">
+          <li><span class="ck">✓</span><span><strong>2,200 paintballs</strong> total, bonus ammo included</span></li>
+          <li><span class="ck">✓</span><span>Full kit for every player: marker, mask, overalls, chest protector</span></li>
+          <li><span class="ck">✓</span><span>Marshal led game modes</span></li>
+        </ul>
+        <a class="btn btn-wa" href="https://wa.me/26773820883?text=Hi%20Trigger%20Ready%2C%20I%20would%20like%20to%20book%20THE%20BIG%20ONE%20%28P2%2C400%2C%20up%20to%2010%20players%29.%0A%0AName%3A%0APreferred%20date%3A%0AVenue%3A" target="_blank" rel="noopener" style="justify-content:center">Book The Big One</a>
+      </div>
+    </div>
+
+    <div class="center" style="margin:46px 0 26px">
+      <div class="eyebrow">Celebrating someone?</div>
+      <h3 style="font-family:'Teko';font-size:40px;line-height:1;margin-bottom:8px">Birthday Packages</h3>
+      <p class="sec-sub center">Everything in our group packages plus the birthday experience: the Birthday Hunt game round, VIP armband and first shot honours, a reserved party area for the cake, and a group photo by our marshal.</p>
+    </div>
+
+    <div class="grid g-2" style="margin-bottom:26px">
+      <div class="card pkg">
+        <div class="pkg-name">The Mini</div>
+        <div class="pkg-price"><span>P</span>2,500</div>
+        <div class="pkg-cap">Up to 10 players · plus up to 3 extra players at P280 each</div>
+        <ul class="kit-list">
+          <li><span class="ck">✓</span><span><strong>2,000 paintballs</strong> total, plus <strong>100 bonus paintballs</strong> for the birthday person</span></li>
+          <li><span class="ck">✓</span><span>Birthday Hunt game round, VIP armband and first shot honours</span></li>
+          <li><span class="ck">✓</span><span>Reserved party area after games for the birthday cake, plus a group photo</span></li>
+          <li><span class="ck">✓</span><span>Full kit for every player: marker, mask, overalls, chest protector</span></li>
+        </ul>
+        <a class="btn btn-wa" href="https://wa.me/26773820883?text=Hi%20Trigger%20Ready%2C%20I%20would%20like%20to%20book%20THE%20MINI%20birthday%20package%20%28P2%2C500%2C%20up%20to%2010%20players%29.%0A%0AName%3A%0ABirthday%20person%3A%0APreferred%20date%3A%0AVenue%3A" target="_blank" rel="noopener" style="justify-content:center">Book The Mini</a>
+      </div>
+
+      <div class="card pkg">
+        <div class="pkg-name">The Big Birthday One</div>
+        <div class="pkg-price"><span>P</span>5,000</div>
+        <div class="pkg-cap">Up to 20 players</div>
+        <ul class="kit-list">
+          <li><span class="ck">✓</span><span><strong>4,500 paintballs</strong> total, plus <strong>200 bonus paintballs</strong> for the birthday person</span></li>
+          <li><span class="ck">✓</span><span>Birthday Hunt game round, VIP armband and first shot honours</span></li>
+          <li><span class="ck">✓</span><span>Reserved party area after games for the birthday cake, plus a group photo</span></li>
+          <li><span class="ck">✓</span><span>Full kit for every player: marker, mask, overalls, chest protector</span></li>
+        </ul>
+        <a class="btn btn-wa" href="https://wa.me/26773820883?text=Hi%20Trigger%20Ready%2C%20I%20would%20like%20to%20book%20THE%20BIG%20BIRTHDAY%20ONE%20%28P5%2C000%2C%20up%20to%2020%20players%29.%0A%0AName%3A%0ABirthday%20person%3A%0APreferred%20date%3A%0AVenue%3A" target="_blank" rel="noopener" style="justify-content:center">Book The Big Birthday One</a>
+      </div>
+    </div>
+
+    <div class="card" style="text-align:center">
+      <p style="color:var(--muted);font-size:15px;margin:0">Additional players on The Big One and The Mini: <strong style="color:var(--ink)">P280 per player</strong> including 200 paintballs and full kit &middot; Top up paintballs on the day: P50 for 50 or P90 for 100 &middot; All sessions are pre booked and a deposit confirms your slot</p>
     </div>
   </div>
 </section>
@@ -648,6 +746,17 @@
             </div>
           </div>
           <div>
+            <label for="package">Package (optional)</label>
+            <select id="package" name="package">
+              <option>No package · standard P250 per player</option>
+              <option>Squad Package · P1,000 · up to 4 players</option>
+              <option>Platoon Package · P1,700 · up to 7 players</option>
+              <option>The Big One · P2,400 · up to 10 players</option>
+              <option>The Mini (birthday) · P2,500 · up to 10 players</option>
+              <option>The Big Birthday One · P5,000 · up to 20 players</option>
+            </select>
+          </div>
+          <div>
             <label for="msg">Anything else? (optional)</label>
             <textarea id="msg" name="msg" placeholder="Preferred time, questions, special requests..."></textarea>
           </div>
@@ -735,6 +844,7 @@
     var players = document.getElementById('players').value;
     var loc = document.getElementById('location').value;
     var occ = document.getElementById('occasion').value;
+    var pkg = document.getElementById('package').value;
     var msg = document.getElementById('msg').value.trim();
 
     if(parseInt(players,10) < 4){ alert('Minimum 4 players to book a session.'); return false; }
@@ -745,7 +855,8 @@
       "*Date:* " + date,
       "*Players:* " + players,
       "*Location:* " + loc,
-      "*Occasion:* " + occ
+      "*Occasion:* " + occ,
+      "*Package:* " + pkg
     ];
     if(msg){ lines.push("*Notes:* " + msg); }
     lines.push("", "Ready to lock in our slot — what's next?");
