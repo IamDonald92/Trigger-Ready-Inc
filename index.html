@@ -734,6 +734,11 @@
             <label for="name">Your name</label>
             <input id="name" name="name" type="text" placeholder="e.g. Kabo M." required />
           </div>
+          <div>
+            <label for="phone">WhatsApp number</label>
+            <input id="phone" name="phone" type="tel" placeholder="e.g. 73 820 883" required />
+          </div>
+          <input id="company_site" name="company_site" type="text" style="position:absolute;left:-9999px;opacity:0" tabindex="-1" autocomplete="off" />
           <div class="row2">
             <div>
               <label for="date">Preferred date</label>
@@ -858,6 +863,7 @@
   function sendBooking(e){
     e.preventDefault();
     var name = document.getElementById('name').value.trim();
+    var phone = document.getElementById('phone').value.trim();
     var date = document.getElementById('date').value;
     var players = document.getElementById('players').value;
     var loc = document.getElementById('location').value;
@@ -867,9 +873,27 @@
 
     if(parseInt(players,10) < 4){ alert('Minimum 4 players to book a session.'); return false; }
 
+    // Silently log this inquiry to the booking system (fire-and-forget).
+    // Skipped if the hidden honeypot field was filled (bots only).
+    var hp = document.getElementById('company_site');
+    if(!hp || !hp.value){
+      try{
+        fetch('https://script.google.com/macros/s/AKfycbyG4WxEDcWlLGAfG7o0aIf5qXfmhXxgdsKUKi95F8ENT1l_tFrBcYe1Uz_N68D2hM83/exec', {
+          method:'POST',
+          keepalive:true,
+          body: JSON.stringify({
+            token:'triggerready-2026', action:'lead',
+            name:name, phone:phone, date:date, players:players,
+            location:loc, occasion:occ, package:pkg, notes:msg
+          })
+        }).catch(function(){});
+      }catch(err){}
+    }
+
     var lines = [
-      "🔴 *PAINTBALL BOOKING REQUEST*", "",
+      "\ud83d\udd34 *PAINTBALL BOOKING REQUEST*", "",
       "*Name:* " + name,
+      "*Number:* " + phone,
       "*Date:* " + date,
       "*Players:* " + players,
       "*Location:* " + loc,
@@ -877,7 +901,7 @@
       "*Package:* " + pkg
     ];
     if(msg){ lines.push("*Notes:* " + msg); }
-    lines.push("", "Ready to lock in our slot — what's next?");
+    lines.push("", "Ready to lock in our slot \u2014 what's next?");
 
     var text = encodeURIComponent(lines.join("\n"));
     window.open("https://wa.me/26773820883?text=" + text, "_blank");
